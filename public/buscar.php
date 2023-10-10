@@ -20,12 +20,15 @@ $cursos = [
 ];
 
 
+/* El bucle `foreach` está iterando sobre la matriz ``, que contiene información sobre
+diferentes cursos. */
 foreach ($cursos as $cursoInfo) {
     $buscadorDeCursos->agregarCurso(new Curso($cursoInfo[0], $cursoInfo[1]));
 }
 
 $resultadosDeBusqueda = $buscadorDeCursos->buscar($palabraClaveParaBuscar);
 
+/* El código es responsable de mostrar los resultados de la búsqueda en la página web. */
 echo "<h2>Resultados para: {$palabraClaveParaBuscar}</h2>";
 foreach ($resultadosDeBusqueda as $cursoEncontrado) {
     echo "<h3>" . $cursoEncontrado->titulo . "</h3>";

@@ -24,7 +24,6 @@
         $(document).ready(function() {
             $('#formBuscar').submit(function(e) {
                 e.preventDefault();
-                $('#resultados').html('Buscando...');
                 $.ajax({
                     url: $(this).attr('action'),
                     type: $(this).attr('method'),
@@ -32,12 +31,14 @@
                     success: function(respuesta) {
                         $('#resultados').html(respuesta);
                     },
-                    error: function() {
-                        $('#resultados').html('Hubo un error al buscar los cursos, por favor inténtalo nuevamente.');
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Error en la solicitud Ajax:", textStatus, errorThrown);
+                        $('#resultados').html("Error al buscar los cursos. Intenta nuevamente más tarde.");
                     }
                 });
             });
-        });
+        })
     </script>
+    
 </body>
 </html>
