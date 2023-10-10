@@ -1,0 +1,79 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  color: #333;
+  font-weight: 700;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  padding-right: 80px; /* Espacio para evitar que el texto se solape con el botón */
+}
+
+.input-group button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#resultados h3 {
+  color: #666;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+#resultados p {
+  color: #999;
+  margin-bottom: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Spinner CSS */
+#loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Diseño Responsivo */
+@media (max-width: 600px) {
+  .input-group button {
+    width: 100%;
+    position: relative;
+    border-radius: 0;
+    margin-top: 10px;
+  }
+
+  .input-group input {
+    padding-right: 15px; /* Reset para mobile */
+  }
+}
